@@ -44,20 +44,20 @@
   .note b{color:var(--ink)}
   footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;
     font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-  a.final{display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;
+  a.latest{display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;
     text-decoration:none;color:inherit;background:var(--mist);border:1px solid var(--line);
     border-top:5px solid var(--lip);border-radius:20px;padding:30px 34px;margin-top:56px;
     transition:transform .3s ease, box-shadow .3s ease}
-  a.final:hover{transform:translateY(-4px);box-shadow:0 18px 44px -22px rgba(22,48,63,.35)}
-  a.final .letter{font-family:"Marcellus",Palatino,serif;font-size:44px;line-height:1;color:var(--aqua)}
-  a.final h2{font-family:"Marcellus",Palatino,serif;font-weight:400;font-size:26px;margin:0 0 6px}
-  a.final p{color:var(--muted);font-size:15px;margin:0}
-  a.final .go{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--lip);white-space:nowrap}
+  a.latest:hover{transform:translateY(-4px);box-shadow:0 18px 44px -22px rgba(22,48,63,.35)}
+  a.latest .letter{font-family:"Marcellus",Palatino,serif;font-size:44px;line-height:1;color:var(--aqua)}
+  a.latest h2{font-family:"Marcellus",Palatino,serif;font-weight:400;font-size:26px;margin:0 0 6px}
+  a.latest p{color:var(--muted);font-size:15px;margin:0}
+  a.latest .go{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--lip);white-space:nowrap}
   .earlier{font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
     color:var(--muted);margin:56px 0 0;text-align:center}
   .earlier + .cards{margin-top:22px}
   @media (max-width:820px){.cards{grid-template-columns:1fr}
-    a.final{grid-template-columns:1fr;gap:14px}}
+    a.latest{grid-template-columns:1fr;gap:14px}}
 </style>
 </head>
 <body>
@@ -70,39 +70,39 @@
 </header>
 
 <main class="wrap">
-  <a class="final" href="final/">
-    <div class="letter">C&#8202;&#10003;</div>
+  <a class="latest" href="v4/">
+    <div class="letter">v4</div>
     <div>
-      <h2>Venere &mdash; revised</h2>
-      <p>The chosen direction, updated with your feedback of 16 September 2026:
+      <h2>v4 &middot; Venere</h2>
+      <p>Latest version: the chosen direction, updated with your feedback of 16 September 2026:
       discontinued models removed, the original Acrylic System&reg; logo, the anti-slip
       floor given its own section, the dog in the closing panel, baths first throughout.</p>
     </div>
-    <span class="go">View the revised site &rarr;</span>
+    <span class="go">View v4 &rarr;</span>
   </a>
 
-  <p class="earlier">The three original directions, as reviewed</p>
+  <p class="earlier">Earlier versions &mdash; v1, v2, v3 as reviewed</p>
   <div class="cards">
     <a class="card a" href="a/">
       <div class="letter">A</div>
       <h2>The Factory</h2>
       <p>Precision-first. Petrol and drafting orange, the dimension finder up front,
       every product drawn to scale. Speaks to installers and dealers.</p>
-      <span class="go">View direction A &rarr;</span>
+      <span class="go">View v1 &rarr;</span>
     </a>
     <a class="card b" href="b/">
       <div class="letter">B</div>
       <h2>The Dark Room</h2>
       <p>Ink, bone and brass. One image, one line. The collection leads and the
       technical tools step back. Speaks to buyers and specifiers.</p>
-      <span class="go">View direction B &rarr;</span>
+      <span class="go">View v2 &rarr;</span>
     </a>
     <a class="card c" href="c/">
       <div class="letter">C</div>
       <h2>Venere</h2>
       <p>Light, warm, sentimental. Porcelain and marine with one lipstick red,
       the company dog at the water line, the archive brought forward.</p>
-      <span class="go">View direction C &rarr;</span>
+      <span class="go">View v3 &rarr;</span>
     </a>
   </div>
 
