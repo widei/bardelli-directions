@@ -377,6 +377,7 @@ footer a:hover{color:var(--ink)}
   font-size:22px}
 .foot-brand span{display:block;font-size:8.5px;letter-spacing:.42em;text-transform:uppercase;
   color:var(--metal);margin-top:7px;font-weight:600}
+.foot-logo{height:72px;width:auto;display:block}
 .foot-brand p{margin-top:26px;font-size:14.5px;line-height:2;color:var(--muted)}
 .legal{margin-top:56px;padding-top:24px;border-top:1px solid var(--line-soft);
   display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
@@ -549,7 +550,7 @@ const T = {
     ctaBtn:"Parliamone",ctaBtn2:"Vedi la collezione",
     galleryKicker:"La superficie",
     galleryTitle:"Da vicino.",
-    galleryLede:"Il piano antiscivolo, lo scarico, la curva del bordo, il sedile stampato nel guscio. Lucido a specchio, senza porosit\u00e0.",
+    galleryLede:"Il piano antiscivolo, lo scarico, la curva del bordo. Lucido a specchio, senza porosit\u00e0.",
     bandTitle:"Una superficie sola, senza giunzioni, senza porosit\u00e0.",
     bandBody:"Acrilico colato ad alto peso molecolare, lucido a specchio, armato con quattro millimetri di vetroresina. Si pulisce in un gesto e resta cos\u00ec negli anni.",
     ctaTitleOld:"Serve una misura che non trovate?",
@@ -628,7 +629,7 @@ const T = {
     ctaBtn:"Start a conversation",ctaBtn2:"See the collection",
     galleryKicker:"The surface",
     galleryTitle:"Up close.",
-    galleryLede:"The anti-slip floor, the waste, the curve of the rim, the seat moulded into the shell. Mirror-polished, without porosity.",
+    galleryLede:"The anti-slip floor, the waste, the curve of the rim. Mirror-polished, without porosity.",
     bandTitle:"One surface. No joints, no porosity.",
     bandBody:"High-molecular-weight cast acrylic, mirror-polished, reinforced with four millimetres of fibreglass. It wipes clean in one pass and stays that way for years.",
     ctaTitleOld:"Need a size that isn't listed?",
@@ -902,7 +903,7 @@ function viewHome(){
     <p class="lede" style="margin:0 auto">${esc(T_.bandBody)}</p>
   </div></section>
 
-  <div class="reel">${reelFrames(12)}</div>
+  <div class="reel">${reelFrames()}</div>
 
   ${antislipBlock()}
 
@@ -915,9 +916,9 @@ function viewHome(){
         <a class="btn" href="#/sistema" data-nav style="margin-top:14px">${esc(T_.heroCta1)}</a>
       </div>
       <figure class="frame" style="margin:0">
-        <img src="img/seat-tray.jpg" alt="${LANG==="it"
-          ? "Sedile stampato nel guscio" : "Seat moulded into the shell"}">
-        <figcaption>${LANG==="it"?"Vasca nella vasca":"Bath in bath"}</figcaption>
+        <img src="img/tray-edge.jpg" alt="${LANG==="it"
+          ? "Il bordo del guscio in acrilico colato" : "The rim of the cast acrylic shell"}">
+        <figcaption>${LANG==="it"?"Acrilico colato":"Cast acrylic"}</figcaption>
       </figure>
     </div>
   </div></section>
@@ -960,11 +961,11 @@ function viewHome(){
 /** The material, up close. Twelve frames from the factory's own gallery. */
 function reelFrames(n){
   const caps = LANG==="it"
-    ? ["scarico","bordo","piano antiscivolo","sedile","scarico","bordo",
-       "sedile","piano antiscivolo","angolo","superficie","bordo","pendenza"]
-    : ["waste","rim","anti-slip floor","seat","waste","rim",
-       "seat","anti-slip floor","corner","surface","rim","fall"];
-  return Array.from({length:n||12},(_,i)=>{
+    ? ["scarico","bordo","piano antiscivolo","superficie","bordo","piano antiscivolo",
+       "scarico","angolo","profilo","profilo","profilo"]
+    : ["waste","rim","anti-slip floor","surface","rim","anti-slip floor",
+       "waste","corner","profile","profile","profile"];
+  return Array.from({length:Math.min(n||caps.length, caps.length)},(_,i)=>{
     const id = String(i+1).padStart(2,"0");
     return `<figure>
       <img src="img/g/${id}.jpg" alt="${esc(caps[i])}" loading="lazy">
@@ -1207,7 +1208,7 @@ function viewAzienda(){
         <p>${esc(T_.aziBody3)}</p>
       </div>
       <figure class="frame" style="margin:0">
-        <img src="img/seat-tray.jpg" alt="">
+        <img src="img/tray-rim.jpg" alt="">
         <figcaption>${LANG==="it"?"Besozzo (VA)":"Besozzo, Italy"}</figcaption>
       </figure>
     </div>
@@ -1342,7 +1343,7 @@ function render(){
   document.getElementById("foot").innerHTML = `
     <div class="foot">
       <div class="foot-brand">
-        <b>Bardelli Mario</b><span>Acrylic System</span>
+        <img class="foot-logo" src="img/logo.png" width="316" height="153" alt="Bardelli Mario &mdash; Acrylic System&reg;">
         <p>Via Lago, 135<br>21023 Besozzo (VA), Italia<br>
         +39 0332 989110<br>info@bardellimario.eu</p>
       </div>
